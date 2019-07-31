@@ -85,23 +85,24 @@ console.log (output);
 // 4. Given an object. Invert it (keys become values and values become keys). If there is more than key for that given value create an array.
 
 
-let obj = { a: '1', b: '2',c: '2',d: '2' };
-function invertObject (obj, newObj = {}, arr = []) {
-	let val;
+let obj = { a: '1', b: '2',c: '3', d: '2', e: '1', h: '3', g:  '2'};
+
+function invertObject (obj, newObj = {}) {
 	for (let key in obj){
-		if (obj[key] !== val){
-			arr = [];
-		}
-		if (obj[key] === val){
-			newObj[obj[key]] = arr;
-			arr.push(key);
+		if(newObj.hasOwnProperty(obj[key])){
+			if (Array.isArray(newObj[obj[key]])){
+				newObj[obj[key]].push(key);
+			} else {
+				newObj[obj[key]] = [newObj[obj[key]]];
+				newObj[obj[key]].push(key);
+			}
 		} else {
 			newObj[obj[key]]= key;
-			val = obj[key];
-			arr.push(key);
-		}  
+		} 
+		
 	}
 	return newObj;
 }
+
 var output = invertObject (obj);
 console.log (output);

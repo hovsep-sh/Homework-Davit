@@ -79,6 +79,7 @@ const str = '495215';
 const num = 3;
 //const str = 'abcdfghz';
 //const num = 7;
+
 function getContiguousSubStr(str, num) {
   let len = str.length;
   let arr = [];

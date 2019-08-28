@@ -29,22 +29,22 @@ console.log(count);
 
 // 3. Convert a long phrase to its acronym.
 
-//const str = 'Prisoner of War';
-const str = 'Have a good night';
-function getArrOfStrings(str) {
+//const str = 'Have a good night';
+const str = 'Prisoner of War';
+
+function getArrOfStrings(str, ) {
   let len = str.length;
   let newStr = '';
-  for (let i = 0; i < len; i++) {
+  let arr = [];
+  for (let i = 0; i <= len; i++) {
     if (str[i] >= 'A' && str[i] <= 'z') {
-      if (!(str[i - 1] >= 'A' && str[i - 1] <= 'z')) {
-        if (str[i] >= 'a' && str[i] <= 'z') {
-          newStr += str[i].toUpperCase();
-        } else {
-          newStr += str[i];
-        }
-      }
+      newStr += str[i];
+    } else {
+      arr.push(newStr);
+      newStr = '';
     }
   }
+  arr.forEach(item => newStr += item[0].toUpperCase());
   return newStr;
 }
 

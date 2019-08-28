@@ -19,35 +19,13 @@ console.log(output);
 
 // 2. Given an array of integers. All numbers are unique. Find the count of missing numbers between minimum and maximum elements to make integers sequence.
 
-const arr = [6, 11, 4, 8];
-
-function getMissingValues(arr) {
-  let newArr = [];
-  let len = arr.length;
-  for (let i = arr[0] + 1; i < arr[len - 1]; i++) {
-    let match = false;
-    for (let j = 0; j < len; j++) {
-      if (i === arr[j]) {
-        match = true;
-        break
-      }
-    }
-    if (!match) {
-      newArr.push(i);
-    }
-  }
-  return newArr;
-}
-
+const arr = [6, 11, 4, 15];
 arr.sort(function (a, b) {
   return a - b
 });
 
 const count = arr[arr.length - 1] - arr[0] + 1 - arr.length;
-const missingValArr = getMissingValues(arr);
-
 console.log(count);
-console.log(missingValArr);
 
 // 3. Convert a long phrase to its acronym.
 

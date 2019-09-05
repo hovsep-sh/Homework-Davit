@@ -76,3 +76,10 @@ function createDigitsString(num, arr) {
 
 const output = getNumString(number);
 alert(output);
+
+
+//2. Write a JavaScript function to get all possible subsets of length 3 of the given array. Assume that all elements in the array are unique.
+
+//3. Given a word and a list of possible anagrams, select the correct sublist.
+
+//4. Write a function, which receives an array as an argument which elements arrays of numbers. Find biggest negative number of each array. If there is not any negative number, ignore that array. Check that items of the given array are arrays.

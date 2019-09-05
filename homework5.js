@@ -12,7 +12,7 @@ function getNumber() {
   }
   return number;
 }
-function getNumString(num) {// 1 1 1 1 0 5
+function getNumString(num) {
   if (num === 'Bye') {
     return num;
   }

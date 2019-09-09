@@ -51,9 +51,7 @@ function getAllPossibleSubsets(arr, num) {
 }
 
 function getnextIterationNumArr(numArr, num, arrLength, currentIndex = num - 1) {
-
   if (numArr[currentIndex] - 1 === numArr[currentIndex - 1]) {
-
     numArr = getnextIterationNumArr(numArr, num, arrLength, currentIndex - 1)
     numArr[currentIndex] = numArr[currentIndex - 1] + 1;
     return numArr;

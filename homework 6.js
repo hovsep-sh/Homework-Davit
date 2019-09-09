@@ -26,12 +26,15 @@ console.log(output);
 //2 Write a function to get all possible subsets of length N of the given array. Assume that all elemnts in array are unique.
 
 const arr = [1, 2, 3, 4, 5, 6, 7];
-const num = 4;
+const num = +prompt ('type any number [1 - 9]','5');
 
 function getAllPossibleSubsets(arr, num) {
+  let arrLength = arr.length;
+  if (num >= arrLength){
+	  return arr;
+  }
   let result = [];
   let numArr = [];
-  let arrLength = arr.length;
   let j = 0;
   while (j < num) {
     numArr.push(j++);

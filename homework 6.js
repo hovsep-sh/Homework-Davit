@@ -18,3 +18,50 @@ function muFunc(arr, num, highRange = arr.length - 1, lowRange = 0, index) {
 
 const output = muFunc(arr, num);
 console.log(output);
+
+
+
+
+
+//2 Write a function to get all possible subsets of length N of the given array. Assume that all elemnts in array are unique.
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+const num = 4;
+
+function getAllPossibleSubsets(arr, num) {
+  let result = [];
+  let numArr = [];
+  let arrLength = arr.length;
+  let j = 0;
+  while (j < num) {
+    numArr.push(j++);
+  }
+  while (numArr[0] !== arrLength - num + 1) {
+    while (numArr[num - 1] < arrLength) {
+      subArr = [];
+      for (let i = 0; i < num; i++) {
+        subArr.push(arr[numArr[i]])
+      }
+      result.push(subArr);
+      numArr[num - 1]++;
+    }
+    numArr = getnextIterationNumArr(numArr, num, arrLength);
+  }
+  return result;
+}
+
+function getnextIterationNumArr(numArr, num, arrLength, currentIndex = num - 1) {
+
+  if (numArr[currentIndex] - 1 === numArr[currentIndex - 1]) {
+
+    numArr = getnextIterationNumArr(numArr, num, arrLength, currentIndex - 1)
+    numArr[currentIndex] = numArr[currentIndex - 1] + 1;
+    return numArr;
+  }
+  numArr[currentIndex - 1] += 1;
+  numArr[currentIndex] = numArr[currentIndex - 1] + 1
+  return numArr;
+}
+
+const output = getAllPossibleSubsets(arr, num);
+console.log(output);
